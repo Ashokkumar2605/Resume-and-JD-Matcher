@@ -1,23 +1,23 @@
-🧠 Simple AI Agent Backend — FastAPI + SQLite + LangChain
-📌 Overview
+ Simple AI Agent Backend — FastAPI + SQLite + LangChain
+ Overview
 
 This project implements the “brain” of a simple AI agent using a FastAPI backend.
 
 The agent receives a natural language prompt, analyzes its intent using a rule-based router, and routes the request to one of two internal tools:
 
-🧮 Calculator Tool — evaluates math expressions
+* Calculator Tool — evaluates math expressions
 
-💾 Memory Tool — performs CRUD operations on a database
+* Memory Tool — performs CRUD operations on a database
 
-🛠️ Technologies Used
+Technologies Used
 Technology	Purpose
-Python 3.10+	Core language
+Python 3.13	Core language
 FastAPI	REST API framework
 Pydantic	Request/response validation
 SQLite	Lightweight database
 LangChain	Tool abstraction layer (agent-style design)
 
-🧠 The Agent Brain (Router)
+The Agent Brain (Router)
 
 The core of the project is router.py, which:
 
@@ -35,7 +35,7 @@ Prompt	Tool	Tool Input
 What is 10 plus 5?	Calculator	"10 + 5"
 Remember my cat's name is Fluffy	Memory Save	{"key": "cat's name", "value": "Fluffy"}
 What is my cat's name?	Memory Read	{"key": "cat's name"}
-🧮 Calculator Tool
+Calculator Tool
 tool_calculate(expression: str)
 
 
@@ -45,7 +45,7 @@ Uses Python eval() with restricted globals
 
 Returns the computed result
 
-⚠️ Security Note — Use of eval()
+Security Note — Use of eval()
 
 The calculator tool uses Python’s built-in eval() function as permitted by the assignment instructions.
 
@@ -75,7 +75,7 @@ any built-in Python functions
 
 Only basic mathematical expressions are allowed.
 
-💾 Memory Tool
+Memory Tool
 
 Implements database CRUD operations:
 
@@ -92,11 +92,11 @@ LangChain is used to wrap tools into agent-style Tool objects via tool_registry.
 
 The router decides which tool to call, and LangChain handles tool abstraction and execution, similar to real AI agents.
 
-🚀 Running the Application
-1️⃣ Install dependencies
+Running the Application
+1️. Install dependencies
 pip install -r requirements.txt
 
-2️⃣ Run the API
+2️. Run the API
 
 From project root:
 
